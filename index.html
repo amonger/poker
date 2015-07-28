@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="deck.js"></script>
+    <script src="card.js"></script>
+    <script src="rank.js"></script>
+    <script>
+        var deck = new Deck();
+        deck.setUp();
+        setInterval(function () {
+            deck.shuffle();
+            var rankings = new Rankings();
+            result = rankings.get(deck.getTop(5));
+
+            console.log(result);
+        }, 1)
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <canvas id="canvas" width="595px" height="160px"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span12">
+            <table class="table table-striped">
+                <thead>
+                <th>Hand</th>
+                <th>Found</th>
+                <th>Sample</th>
+                <th>Percentage</th>
+                </thead>
+                <tr>
+                    <td>Royal Flush
+                        <div class="bar percentBar royalFlush">
+                    </td>
+                    <td id="royalFlush">0</td>
+                    <td id="count"></td>
+                    <td id="royalFlushPercentage"></td>
+                </tr>
+                <tr>
+                    <td>Straight Flush
+                        <div class="bar percentBar straightFlush">
+                    </td>
+                    <td id="straightFlush">0</td>
+                    <td id="count"></td>
+                    <td id="straightFlushPercentage"></td>
+                </tr>
+                <tr>
+                    <td>Four of a Kind
+                        <div class="bar percentBar fourOfAKind">
+                    </td>
+                    <td id="fourOfAKind">0</td>
+                    <td id="count"></td>
+                    <td id="fourOfAKindPercentage"></td>
+                </tr>
+                <tr>
+                    <td>Full House
+                        <div class="bar percentBar fullHouse">
+                    </td>
+                    <td id="fullHouse">0</td>
+                    <td id="count"></td>
+                    <td id="fullHousePercentage"></td>
+                </tr>
+                <tr>
+                    <td>Flush
+                        <div class="bar percentBar flush">
+                    </td>
+                    <td id="flush">0</td>
+                    <td id="count"></td>
+                    <td id="flushPercentage"></td>
+                </tr>
+                <tr>
+                    <td>Straight
+                        <div class="bar percentBar straight">
+                    </td>
+                    <td id="straight">0</td>
+                    <td id="count"></td>
+                    <td id="straightPercentage"></td>
+                </tr>
+                <tr>
+                    <td>Three Of A Kind
+                        <div class="bar percentBar threeOfAKind">
+                    </td>
+                    <td id="threeOfAKind">0</td>
+                    <td id="count"></td>
+                    <td id="threeOfAKindPercentage"></td>
+                </tr>
+                <tr>
+                    <td>Two Pair
+                        <div class="bar percentBar twoPair">
+                    </td>
+                    <td id="twoPair">0</td>
+                    <td id="count"></td>
+                    <td id="twoPairPercentage"></td>
+                </tr>
+                <tr>
+                    <td>Pair
+                        <div class="bar percentBar pair">
+                    </td>
+                    <td id="pair">0</td>
+                    <td id="count"></td>
+                    <td id="pairPercentage"></td>
+                </tr>
+                <tr>
+                    <td>High Card
+                        <div class="bar percentBar highCard"></div>
+                    </td>
+                    <td id="highCard">0</td>
+                    <td id="count"></td>
+                    <td id="highCardPercentage"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</html>
